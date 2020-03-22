@@ -1,0 +1,6 @@
+.env
+nginx/*
+app/
+db/
+logs/
+
