@@ -19,7 +19,7 @@ RUN cat /tmp/php.ini >>/etc/php.ini \
 	&& sed -i 's/listen = 127.0.0.1:9000/listen = 0.0.0.0:9000/' /etc/php-fpm.d/www.conf \
 	&& sed -i 's/listen.allowed_clients/;listen.allowed_clients/' /etc/php-fpm.d/www.conf \
 	&& mkdir /run/php-fpm \
-	&& /tmp/app_crontab | crontab
+	&& cat /tmp/app_crontab | crontab
 
 COPY supervisord.conf /etc/supervisord.conf
 

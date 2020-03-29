@@ -21,6 +21,7 @@ services:
       MYSQL_RANDOM_ROOT_PASSWORD: "yes"
     volumes:
       - ./db:/var/lib/mysql
+      - ./src/db:/docker-entrypoint-initdb.d
   php:
     build: src/php-fpm
     volumes:
