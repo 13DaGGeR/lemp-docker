@@ -9,7 +9,6 @@ services:
       - ./logs:/logs
     ports:
       - $PORT_HTTP:80
-      - $PORT_HTTPS:443
     depends_on:
       - php
   db:
