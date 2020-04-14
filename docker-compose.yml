@@ -12,7 +12,7 @@ services:
     depends_on:
       - php
   db:
-    image: mysql:5.7
+    image: mysql:8
     environment:
       MYSQL_DATABASE: ${DOMAIN}
       MYSQL_USER: ${DB_USER}
