@@ -11,6 +11,7 @@ services:
       - $PORT_HTTP:80
     depends_on:
       - php
+    restart: unless-stopped
   db:
     image: mysql:8
     environment:
@@ -22,9 +23,11 @@ services:
       - ./db:/var/lib/mysql
       - ./src/db-dump:/docker-entrypoint-initdb.d
       - ./src/db-conf:/etc/mysql/conf.d
+    restart: unless-stopped
   php:
     build: src/php-fpm
     volumes:
       - ./app:/app
     depends_on:
       - db
+    restart: unless-stopped
